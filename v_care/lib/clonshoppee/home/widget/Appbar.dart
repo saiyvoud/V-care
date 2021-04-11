@@ -9,7 +9,7 @@ class Appbarhome extends StatefulWidget {
 }
 
 class _AppbarhomeState extends State<Appbarhome> {
-  final String location = 'images/icons/location.svg';
+  final String location = 'images/icons/menu.svg';
   final String customerservice = 'images/icons/live-chat.svg';
   @override
   Widget build(BuildContext context) {
@@ -43,8 +43,8 @@ class _AppbarhomeState extends State<Appbarhome> {
       leading: IconButton(
         icon: SvgPicture.asset(
           location,
-          height: 25,
-          width: 25,
+          height: 20,
+          width: 20,
           color: Colors.white,
         ),
         onPressed: () {},

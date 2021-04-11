@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:v_care/login/login.dart';
 import 'package:v_care/sing%20up/components/btnregister.dart';
 import 'package:v_care/sing%20up/components/txtcall.dart';
 import 'package:v_care/sing%20up/components/txtfullname.dart';
@@ -21,18 +20,18 @@ class _RegistersState extends State<Registers> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            MaterialPageRoute route = MaterialPageRoute(
-              builder: (BuildContext context) => Login(),
-            );
-            Navigator.of(context).push(route);
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     MaterialPageRoute route = MaterialPageRoute(
+        //       builder: (BuildContext context) => Login(),
+        //     );
+        //     Navigator.of(context).push(route);
+        //   },
+        //   icon: Icon(
+        //     Icons.arrow_back,
+        //     color: Colors.black,
+        //   ),
+        // ),
         backgroundColor: Colors.white,
       ),
       body: Form(

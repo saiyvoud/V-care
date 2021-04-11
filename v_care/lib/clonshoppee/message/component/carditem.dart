@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class CardItem extends StatefulWidget {
-  @override
-  _CardItemState createState() => _CardItemState();
-}
 
-class _CardItemState extends State<CardItem> {
+class CardItem extends StatelessWidget {
+  const CardItem(
+      {Key key,
+      this.text1,
+      this.text2,
+      this.text3,
+      this.icon,
+      this.img,
+      this.press})
+      : super(key: key);
+  final String text1, text2, text3, icon, img;
+  final VoidCallback press;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,16 +25,11 @@ class _CardItemState extends State<CardItem> {
               padding: const EdgeInsets.all(10.0),
               child: SizedBox(
                 width: 100,
-                child: AspectRatio(
-                  aspectRatio: 0.88,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFAE4E4EEFA),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Image.asset('images/img1.jpg'),
-                  ),
+                height: 90,
+                child: Container(
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(img, fit: BoxFit.cover)),
                 ),
               ),
             ),
@@ -44,15 +46,15 @@ class _CardItemState extends State<CardItem> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'ໂປໂມຊັນຍາມຮ້ອນ....',
+                  text1,
                   style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 Text(
-                  'Mr saiyvoud somnanong....',
+                  text2,
                   style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
                 Text(
-                  'Mr saiyvoud somnanong....',
+                  text3,
                   style: TextStyle(fontSize: 18, color: Colors.black),
                 ),
               ],

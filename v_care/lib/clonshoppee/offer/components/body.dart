@@ -18,7 +18,6 @@ class _BodyOfferState extends State<BodyOffer> {
     return SingleChildScrollView(
       child: Container(
         height: 700,
-        width: 500,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(

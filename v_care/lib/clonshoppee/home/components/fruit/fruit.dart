@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:v_care/clonshoppee/home/components/fruit/fruithinopronic.dart';
 import 'package:v_care/clonshoppee/home/components/fruit/fruitorganic.dart';
+import 'package:v_care/clonshoppee/home/home.dart';
 
 class Fruit extends StatefulWidget {
   @override
@@ -16,6 +17,17 @@ class _FruitState extends State<Fruit> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              MaterialPageRoute route = MaterialPageRoute(
+                  builder: (BuildContext context) => Homepage1());
+              Navigator.of(context).pop(route);
+            },
+          ),
           backgroundColor: Colors.white,
           centerTitle: true,
           title: Text(

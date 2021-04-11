@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:v_care/clonshoppee/home/home.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -11,6 +12,18 @@ class _SearchState extends State<Search> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            MaterialPageRoute route = MaterialPageRoute(
+              builder: (BuildContext context) => Homepage1(),
+            );
+            Navigator.of(context).pop(route);
+          },
+        ),
         elevation: 0.0,
         backgroundColor: Colors.white,
         actions: [

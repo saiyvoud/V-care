@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:v_care/clonshoppee/home/home.dart';
 
 import 'hinopronic.dart';
 import 'organic.dart';
@@ -17,6 +18,18 @@ class _VegetableState extends State<Vegetable> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              MaterialPageRoute route = MaterialPageRoute(
+                builder: (BuildContext context) => Homepage1(),
+              );
+              Navigator.of(context).pop(route);
+            },
+          ),
           backgroundColor: Colors.white,
           centerTitle: true,
           title: Text(

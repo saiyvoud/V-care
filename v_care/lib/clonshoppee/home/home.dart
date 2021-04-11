@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:v_care/clonshoppee/home/components/detailproduct/detail_screen.dart';
+import 'package:v_care/clonshoppee/home/components/fruit/fruit.dart';
+import 'package:v_care/clonshoppee/home/components/vegetable/vegetable.dart';
+import 'package:v_care/clonshoppee/home/widget/menu.dart';
 
 import 'widget/Appbar.dart';
 import 'widget/advice_product.dart';
@@ -30,23 +34,48 @@ class _Homepage1State extends State<Homepage1> {
                     SizedBox(
                       width: 20,
                     ),
-                    _gridItem(Icons.access_alarm, 'ໝາກໄມ້', Colors.orange),
+                    Menu(
+                      icon: Icons.access_alarm,
+                      text: 'ໝາກໄມ້',
+                      color: Colors.orange,
+                      press: () {
+                        MaterialPageRoute route = MaterialPageRoute(
+                          builder: (BuildContext context) => Fruit(),
+                        );
+                        Navigator.of(context).push(route);
+                      },
+                    ),
                     SizedBox(
                       width: 20,
                     ),
-                    _gridItem(
-                        Icons.access_alarm, 'ຜັກ', Colors.greenAccent[700]),
+                    Menu(
+                      icon: Icons.access_alarm,
+                      text: 'ຜັກ',
+                      color: Colors.greenAccent[700],
+                      press: () {
+                        MaterialPageRoute route = MaterialPageRoute(
+                          builder: (BuildContext context) => Vegetable(),
+                        );
+                        Navigator.of(context).push(route);
+                      },
+                    ),
                     SizedBox(
                       width: 20,
                     ),
-                    _gridItem(Icons.access_alarm, 'ສິນຄ້າກະສິກຳ', Colors.red),
+                    Menu(
+                      icon: Icons.access_alarm,
+                      text: 'ສິນຄ້າກະສິກຳ',
+                      color: Colors.red,
+                      press: () {},
+                    ),
                     SizedBox(
                       width: 20,
                     ),
-                    _gridItem(
-                      Icons.access_alarm,
-                      'ໝວດໝູ່ສິນຄ້າ',
-                      Colors.blue,
+                    Menu(
+                      icon: Icons.access_alarm,
+                      text: 'ໝວດໝູ່ສິນຄ້າ',
+                      color: Colors.blue,
+                      press: () {},
                     ),
                   ],
                 ),
@@ -58,12 +87,21 @@ class _Homepage1State extends State<Homepage1> {
                     SizedBox(
                       width: 20,
                     ),
-                    _gridItem(
-                        Icons.access_alarm, 'ບັດສ່ວນຫຼຸດ', Colors.yellow[700]),
+                    Menu(
+                      icon: Icons.access_alarm,
+                      text: 'ບັດສ່ວນຫຼຸດ',
+                      color: Colors.yellow[700],
+                      press: () {},
+                    ),
                     SizedBox(
                       width: 20,
                     ),
-                    _gridItem(Icons.access_alarm, 'ໂປໂມຊັ້ນ', Colors.indigo),
+                    Menu(
+                      icon: Icons.access_alarm,
+                      text: 'ໂປໂມຊັ້ນ',
+                      color: Colors.indigo,
+                      press: () {},
+                    ),
                     SizedBox(
                       width: 20,
                     ),
@@ -236,52 +274,132 @@ class _Homepage1State extends State<Homepage1> {
           SliverGrid.count(
             crossAxisCount: 2,
             children: [
-              gridviewproduct(
-                  'images/img1.jpg', 'ຜັກກາດ', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img2.jpg', 'ຜັກສະຫຼັດ', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img3.jpg', 'ຜັກບົ່ງ', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img2.jpg', 'ຜັກແຊວ', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img1.jpg', 'ຜັກຊອມ', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img3.jpg', 'ຜັກ', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img2.jpg', 'vegetable', 'ອີນຊີ', '18,000 LAK/kg'),
-              gridviewproduct(
-                  'images/img1.jpg', 'vegetable', 'ອີນຊີ', '18,000 LAK/kg'),
+              Product(
+                imgPath: 'images/pine-apple.jpg',
+                name: 'ຜັກກາດ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img6.jpg',
+                name: 'ຜັກສະຫຼັດ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img7.jpg',
+                name: 'ຜັກບົ່ງ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img5.jpg',
+                name: 'ຜັກແຊວ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/apple.jpg',
+                name: 'ຜັກຊອມ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img8.jpg',
+                name: 'ຜັກ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img9.jpg',
+                name: 'vegetable',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {
+                  MaterialPageRoute route = MaterialPageRoute(
+                    builder: (BuildContext context) => DetailProduct(),
+                  );
+                  Navigator.of(context).push(route);
+                },
+              ),
+              Product(
+                imgPath: 'images/img6.jpg',
+                name: 'vegetable',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/pine-apple.jpg',
+                name: 'ຜັກກາດ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img6.jpg',
+                name: 'ຜັກສະຫຼັດ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img7.jpg',
+                name: 'ຜັກບົ່ງ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img5.jpg',
+                name: 'ຜັກແຊວ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/apple.jpg',
+                name: 'ຜັກຊອມ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img8.jpg',
+                name: 'ຜັກ',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
+              Product(
+                imgPath: 'images/img9.jpg',
+                name: 'vegetable',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {
+                  MaterialPageRoute route = MaterialPageRoute(
+                    builder: (BuildContext context) => DetailProduct(),
+                  );
+                  Navigator.of(context).push(route);
+                },
+              ),
+              Product(
+                imgPath: 'images/img6.jpg',
+                name: 'vegetable',
+                type: 'ອີນຊີ',
+                price: '18,000 LAK/kg',
+                press: () {},
+              ),
             ],
           ),
         ],
       ),
-    );
-  }
-
-  Widget _gridItem(icon, text, color) {
-    return Column(
-      children: [
-        Container(
-          height: 50,
-          width: 80,
-          child: CircleAvatar(
-            child: Icon(
-              icon,
-              size: 25,
-              color: Colors.white,
-            ),
-            backgroundColor: color,
-          ),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Text(
-          text,
-          style: TextStyle(fontSize: 13, color: Colors.black),
-        ),
-      ],
     );
   }
 }

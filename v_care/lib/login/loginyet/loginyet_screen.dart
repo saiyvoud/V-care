@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:v_care/sing%20up/Register.dart';
 
 import '../login.dart';
 
@@ -26,10 +27,6 @@ class Loginyet extends StatelessWidget {
                   height: 60,
                   width: 150.0,
                   decoration: BoxDecoration(
-                    // gradient: LinearGradient(
-                    //     colors: [Colors.greenAccent[700], Colors.green],
-                    //     begin: Alignment.topLeft,
-                    //     end: Alignment.topRight),
                     borderRadius: BorderRadius.circular(10.0),
                     color: Colors.greenAccent[700],
                   ),
@@ -52,14 +49,18 @@ class Loginyet extends StatelessWidget {
               Container(
                 height: 60,
                 width: 150.0,
-
                 // ignore: deprecated_member_use
                 child: OutlineButton(
                   child: Text(
                     'ລົງທະບຽນ',
                     style: TextStyle(fontSize: 22.0, color: Colors.black),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    MaterialPageRoute route = MaterialPageRoute(
+                      builder: (BuildContext context) => Registers(),
+                    );
+                    Navigator.of(context).push(route);
+                  },
                 ),
               ),
             ],
