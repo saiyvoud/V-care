@@ -1,8 +1,11 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:v_care/clonshoppee/profile/profile.dart';
 import 'package:v_care/login/component/returnpassword/returnpassword_screen.dart';
+import 'package:v_care/models/login.dart';
 import 'package:v_care/sing%20up/Register.dart';
+import 'package:http/http.dart' as http;
 
 class BodyLogin extends StatefulWidget {
   @override
@@ -10,31 +13,58 @@ class BodyLogin extends StatefulWidget {
 }
 
 class _BodyLoginState extends State<BodyLogin> {
+  // TextEditingController _nameController = TextEditingController();
+  // TextEditingController _callController = TextEditingController();
+  // TextEditingController _passwordController = TextEditingController();
+  // TextEditingController _comfirmController = TextEditingController();
+  Future<Logins> signupMethod(
+      String name, String call, String password, String comfirm) async {
+    Map<String, dynamic> requstPayload = {
+      "name": name,
+      "call": call,
+      "password": password,
+      "comfirm": comfirm
+    };
+    final http.Response response = await http.post(
+        Uri.http('localhost:3000', '/signin'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(requstPayload));
+    if (response.statusCode == 200) {
+      return Logins.fromJson(json.decode(response.body));
+    } else {
+      throw Exception("Fail to sign in user");
+    }
+  }
+
+  final _formkey = GlobalKey<FormState>();
   bool redEye = true;
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          buildText(),
-          SizedBox(height: 40),
-          buildcall(),
-          SizedBox(height: 20),
-          buildpassword(),
-          SizedBox(height: 20),
-          buildforget(),
-          SizedBox(height: 40),
-          btnLogin(),
-          SizedBox(height: 20),
-          buildchose(),
-          SizedBox(height: 20),
-          buildfacebook(),
-          SizedBox(height: 40),
-          buildregister()
-        ],
+    return Form(
+      key: _formkey,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            buildText(),
+            SizedBox(height: 40),
+            buildcall(),
+            SizedBox(height: 20),
+            buildpassword(),
+            SizedBox(height: 20),
+            buildforget(),
+            SizedBox(height: 40),
+            btnLogin(),
+            SizedBox(height: 20),
+            buildchose(),
+            SizedBox(height: 20),
+            buildfacebook(),
+            SizedBox(height: 40),
+            buildregister()
+          ],
+        ),
       ),
     );
   }
